@@ -19,11 +19,11 @@ namespace CreateVisualtable.Controllers
         [HttpGet]
         public IActionResult ChooseTable()
         {
-            List<Tuple<int , string >> list = new List<Tuple<int , string >>();
+            List<(int id, string TableName)> list = new List<(int id, string TableName)>();
             var list1 = _service.AllTable();
             foreach (var item in list1)
             {
-                list.Add(new Tuple<int, string >(item.Id, item.TableName));
+                list.Add((item.Id,item.TableName));
             }
             ViewData["Table"] = list;
 
@@ -84,12 +84,12 @@ namespace CreateVisualtable.Controllers
         /// </summary>
         /// <param name="values"></param>
         /// <returns></returns>
-        List<Tuple<int, string, string,string >> ValueList(List<ValueView> values)
+        List<(int id, string fieldvalue, string column,string type)> ValueList(List<ValueView> values)
         {
-            List<Tuple<int, string, string,string>> list = new List<Tuple<int, string, string ,string>>();
+            List<(int id, string fieldvalue, string column, string type)> list = new List<(int id, string fieldvalue, string column, string type)>();
             foreach (var item in values)
             {
-                list.Add(new Tuple<int, string, string,string>(item.TableId, item.FieldValue, item.Column ,item.Type.ToString()));
+                list.Add((item.TableId, item.FieldValue, item.Column ,item.Type.ToString()));
             }
             return list;
         }       

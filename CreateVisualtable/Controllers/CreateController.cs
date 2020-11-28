@@ -44,13 +44,12 @@ namespace CreateVisualtable.Controllers
             return View("AddNewTable", model);
         }
 
-        List<Tuple<string, string>> TypeList(TableView model)
+        List<(string type, string columnName)> TypeList(TableView model)
         {
-            List<(string name, string sa)> name = new List<(string name, string sa)>();
-            List<Tuple<string, string>> list = new List<Tuple<string, string>>();
+            List<(string type, string columnName)> list = new List<(string type, string columnName)>();
             foreach (var item in model.TypeList)
             {
-                list.Add(new Tuple<string, string>(item.Type.ToString(), item.ColumnName));
+                list.Add((item.Type.ToString(), item.ColumnName));
             }
             return list;
         }

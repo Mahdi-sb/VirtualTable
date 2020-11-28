@@ -15,7 +15,7 @@ namespace Service.CreateTable
             _db = db;
             _check = check;
         }
-        public string AddInformationTodatabase(string TableName, List<Tuple<string, string>> Types)
+        public string AddInformationTodatabase(string TableName, List<(string type, string columnName)> Types)
         {
             if (_check.CheckAllinput(Types, TableName) != "ok") return _check.CheckAllinput(Types, TableName);
             AddToTables(TableName);
@@ -40,11 +40,11 @@ namespace Service.CreateTable
         }
 
 
-        public void AddToType(List<Tuple<string, string>> Types, int Id)
+        public void AddToType(List<(string type, string columnName)> Types, int Id)
         {
             foreach (var item in Types)
             {
-                _db.Types.Insert(new Types { Field_Name = item.Item2, Field_Type = item.Item1, TableId = Id });
+                _db.Types.Insert(new Types { Field_Name = item.columnName, Field_Type = item.type, TableId = Id });
             }
         }
 

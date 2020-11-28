@@ -17,7 +17,7 @@ namespace Service.Addvalue
             _check = check;
         }
 
-        public string AddToValueTable(List<Tuple<int, string, string ,string>> values)
+        public string AddToValueTable(List<(int id, string fieldvalue, string column, string type)> values)
         {
             if (_check.CheckValues(values) != "ok") return _check.CheckValues(values);
             foreach (var item in values)

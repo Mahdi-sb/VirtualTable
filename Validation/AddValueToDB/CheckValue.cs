@@ -12,12 +12,12 @@ namespace Validation.AddValueToDB
         {
             _valid = valid;
         }
-        public string CheckBool(List<Tuple<int, string, string, string>> values)
+        public string CheckBool(List<(int id, string fieldvalue, string column, string type)> values)
         {
             foreach (var item in values)
             {
 
-                if (item.Item4 == "BOOL" && (item.Item2.ToLower() != "true" && item.Item2.ToLower() != "false"))
+                if (item.type == "BOOL" && (item.fieldvalue.ToLower() != "true" && item.fieldvalue.ToLower() != "false"))
                 {
                     return _valid.IsBool();
                 }
@@ -27,11 +27,11 @@ namespace Validation.AddValueToDB
             return _valid.IsOk();
         }
 
-        public string CheckInt(List<Tuple<int, string, string, string>> values)
+        public string CheckInt(List<(int id, string fieldvalue, string column, string type)> values)
         {
             foreach (var item in values)
             {
-                if (item.Item4 == "INT" && item.Item2.Any(char.IsLetter))
+                if (item.type == "INT" && item.fieldvalue.Any(char.IsLetter))
                 {
                     return _valid.IsInt();
 
@@ -41,11 +41,11 @@ namespace Validation.AddValueToDB
             return _valid.IsOk();
         }
 
-        public string CheckString(List<Tuple<int, string, string, string>> values)
+        public string CheckString(List<(int id, string fieldvalue, string column, string type)> values)
         {
             foreach (var item in values)
             {
-                if (item.Item4 == "STRING" && item.Item2.All(char.IsDigit))
+                if (item.type == "STRING" && item.fieldvalue.All(char.IsDigit))
                 {
                     return _valid.IsString();
                 }
@@ -53,7 +53,7 @@ namespace Validation.AddValueToDB
             return _valid.IsOk();
         }
 
-        public string CheckValues(List<Tuple<int, string, string, string>> values)
+        public string CheckValues(List<(int id, string fieldvalue, string column, string type)> values)
         {
             if (CheckString(values) != "ok") return CheckString(values);
             if (CheckInt(values) != "ok") return CheckInt(values);

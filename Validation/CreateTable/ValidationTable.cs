@@ -14,7 +14,7 @@ namespace Validation
             _db = db;
         }
 
-        public string CheckAllinput(List<Tuple<string, string>> Types, string TableName)
+        public string CheckAllinput(List<(string type, string columnName)> Types, string TableName)
         {
             if (CheckTableName(TableName) != "ok") return CheckTableName(TableName);
             if (ColumnName(Types) != "ok") return ColumnName(Types);
@@ -29,22 +29,22 @@ namespace Validation
             _valid.RepetitiveTableName (): _valid.IsOk();
         }
 
-        public string ColumnName(List<Tuple<string, string>> Types)
+        public string ColumnName(List<(string type, string columnName)> Types)
         {
             var name = " ";
             foreach (var item in Types)
             {
                 
-                if(item.Item2 == name)
+                if(item.columnName == name)
                 {
                     return _valid.RepetitiveColumnName();
                 }
-                name = item.Item2;
+                name = item.columnName;
             }
             return _valid.IsOk();
         }
 
-        public string NumberOfColumn(List<Tuple<string, string>> Types)
+        public string NumberOfColumn(List<(string type, string columnName)> Types)
         {
             return Types.Count == 0 ? _valid.AddColumn() : _valid.IsOk();
         }

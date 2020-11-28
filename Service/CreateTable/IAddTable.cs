@@ -18,7 +18,7 @@ namespace Service.CreateTable
         /// </summary>
         /// <param name="Context"></param>
         /// <param name="Id"></param>
-        void AddToType(List<Tuple<string, string>> Types, int Id);
+        void AddToType(List<(string type, string columnName)> Types, int Id);
 
         /// <summary>
         /// Add value to CreateTime Table in Database
@@ -28,6 +28,6 @@ namespace Service.CreateTable
         /// <param name="Id"></param>
         void AddToTime(int Id);
 
-        string AddInformationTodatabase(string TableName, List<Tuple<string, string>> Types);
+        string AddInformationTodatabase(string TableName, List<(string type, string columnName)> Types);
     }
 }

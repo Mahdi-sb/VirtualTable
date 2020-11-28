@@ -12,7 +12,7 @@ namespace Service.Addvalue
         /// </summary>
         /// <param name="Context"></param>
         /// <param name="values"></param>
-        string AddToValueTable(List<Tuple<int,string,string , string>> values);
+        string AddToValueTable(List<(int id, string fieldvalue, string column, string type)> values);
 
         /// <summary>
         /// return information of table

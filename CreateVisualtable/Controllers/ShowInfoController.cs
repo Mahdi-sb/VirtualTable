@@ -24,10 +24,10 @@ namespace CreateVisualtable.Controllers
             ViewData["column"] = _service.AllType(id);
             var value = _service.ValueOfTable(id);
 
-            List<Tuple<int, string, string>> values = new List<Tuple<int, string, string>>();
+            List<(int tableId, string fieldValue, string column)> values = new List<(int tableId, string fieldValue, string column)>();
             foreach (var item in value)
             {
-                values.Add(new Tuple<int, string, string>(item.TableId, item.FieldValue, item.Column));
+                values.Add((item.TableId, item.FieldValue, item.Column));
             }
 
             return View(values);//_show.ValueOfTable(id));

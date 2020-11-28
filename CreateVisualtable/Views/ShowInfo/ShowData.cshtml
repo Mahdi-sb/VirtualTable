@@ -1,4 +1,4 @@
-﻿@model List<Tuple<int, string, string>>
+﻿@model List<(int tableId, string fieldValue, string column)>
 @{ ViewData["Title"] = "ShowData";
                 var column = ViewData["column"] as List<string>;
                 int xt = column.Count;
