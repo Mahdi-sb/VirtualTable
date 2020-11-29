@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CreateVisualtable.ViewModel;
+using DTO;
 using Microsoft.AspNetCore.Mvc;
 using Service.CreateTable;
 
@@ -31,8 +32,13 @@ namespace CreateVisualtable.Controllers
         {
             if (ModelState.IsValid)
             {
+                List<TypesDTO> types = new List<TypesDTO>();
+                foreach (var item in model.TypeList)
+                {
+                    types.Add(new TypesDTO(item.ColumnName, item.Type.ToString()));
+                }
 
-                string error=_service.AddInformationTodatabase(model.TableName, TypeList(model));
+                string error=_service.AddInformationTodatabase(model.TableName, types);
 
                 if (error != "ok")
                 {
@@ -44,15 +50,6 @@ namespace CreateVisualtable.Controllers
             return View("AddNewTable", model);
         }
 
-        List<(string type, string columnName)> TypeList(TableView model)
-        {
-            List<(string type, string columnName)> list = new List<(string type, string columnName)>();
-            foreach (var item in model.TypeList)
-            {
-                list.Add((item.Type.ToString(), item.ColumnName));
-            }
-            return list;
-        }
 
     }
 }

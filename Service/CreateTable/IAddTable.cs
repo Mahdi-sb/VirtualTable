@@ -1,4 +1,5 @@
 ﻿using DataAccess.Entity;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,7 +19,7 @@ namespace Service.CreateTable
         /// </summary>
         /// <param name="Context"></param>
         /// <param name="Id"></param>
-        void AddToType(List<(string type, string columnName)> Types, int Id);
+        void AddToType(List<TypesDTO> Types, int Id);
 
         /// <summary>
         /// Add value to CreateTime Table in Database
@@ -28,6 +29,6 @@ namespace Service.CreateTable
         /// <param name="Id"></param>
         void AddToTime(int Id);
 
-        string AddInformationTodatabase(string TableName, List<(string type, string columnName)> Types);
+        string AddInformationTodatabase(string TableName,List<TypesDTO> Types);
     }
 }

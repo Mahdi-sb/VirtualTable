@@ -1,4 +1,5 @@
 ﻿using DataAccess.Entity;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,7 +13,7 @@ namespace Service.Addvalue
         /// </summary>
         /// <param name="Context"></param>
         /// <param name="values"></param>
-        string AddToValueTable(List<(int id, string fieldvalue, string column, string type)> values);
+        string AddToValueTable(List<ValueDTO> values);
 
         /// <summary>
         /// return information of table

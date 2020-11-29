@@ -1,4 +1,5 @@
 ﻿using DataAccess.Entity;
+using DTO;
 using Repository.Context;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Service.CreateTable
             _db = db;
             _check = check;
         }
-        public string AddInformationTodatabase(string TableName, List<(string type, string columnName)> Types)
+        public string AddInformationTodatabase(string TableName,List<TypesDTO> Types)
         {
             if (_check.CheckAllinput(Types, TableName) != "ok") return _check.CheckAllinput(Types, TableName);
             AddToTables(TableName);
@@ -40,11 +41,11 @@ namespace Service.CreateTable
         }
 
 
-        public void AddToType(List<(string type, string columnName)> Types, int Id)
+        public void AddToType(List<TypesDTO> Types, int Id)
         {
             foreach (var item in Types)
             {
-                _db.Types.Insert(new Types { Field_Name = item.columnName, Field_Type = item.type, TableId = Id });
+                _db.Types.Insert(new Types { Field_Name = item.Field_Name, Field_Type = item.Field_Type, TableId = Id });
             }
         }
 

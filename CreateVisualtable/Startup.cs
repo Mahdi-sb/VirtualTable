@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,7 +38,6 @@ namespace CreateVisualtable
             services.AddTransient<IAddTable, AddTable>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<ICheckTableInput, ValidationTable>();
-            services.AddTransient<IValidation, Validation.Validation>();
             services.AddTransient<IAddValue, AddvalueToDB>();
             services.AddTransient<ICheckValue, CheckValue>();
             services.AddTransient<IShowInfo, ShowInfo>();

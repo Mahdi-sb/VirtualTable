@@ -1,5 +1,5 @@
 ﻿@{ ViewData["Title"] = "ChooseTable";
-                var Tables = ViewData["Table"] as List<(int id,string TableName)>; }
+                var Tables = ViewData["Table"] as List<DTO.TableDTO>; }
 
 <h1>جدول ها </h1>
 
@@ -10,8 +10,8 @@
         <h5 class="card-title">نام جدول : @(item.TableName) </h5>
     </div>
     <div class="card-footer font-weight-bold text-black-50">
-        <a asp-controller="AddValue" asp-action="SeedData" asp-route-id=@item.id class="btn btn-warning"> اضافه کردن داده</a>
-        <a asp-controller="ShowInfo" asp-action="ShowData" asp-route-id=@item.id class="btn btn-success"> نمایش داده های جدول</a>
+        <a asp-controller="AddValue" asp-action="SeedData" asp-route-id=@item.Id class="btn btn-warning"> اضافه کردن داده</a>
+        <a asp-controller="ShowInfo" asp-action="ShowData" asp-route-id=@item.Id class="btn btn-success"> نمایش داده های جدول</a>
     </div>
 
 

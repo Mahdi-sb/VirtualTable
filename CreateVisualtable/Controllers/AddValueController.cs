@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CreateVisualtable.ViewModel;
+using DTO;
 using Microsoft.AspNetCore.Mvc;
 using Service.Addvalue;
 
@@ -16,59 +17,54 @@ namespace CreateVisualtable.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// create page to choose table
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult ChooseTable()
         {
-            List<(int id, string TableName)> list = new List<(int id, string TableName)>();
+            List<TableDTO> list = new List<TableDTO>();
             var list1 = _service.AllTable();
             foreach (var item in list1)
             {
-                list.Add((item.Id,item.TableName));
+                list.Add( new TableDTO(item.Id,item.TableName));
             }
             ViewData["Table"] = list;
 
             return View();
         }
 
+        /// <summary>
+        /// seed data in database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult SeedData(int id)
         {
             var TableData = _service.TableData(id);
-            List<TypeView> model = new List<TypeView>();
+            List<TypesDTO> model = new List<TypesDTO>();
             ////fill viewmodel with corrent  information
             foreach (var item in TableData)
             {
-                model.Add(new TypeView
-                {
-                    Field_Name = item.Field_Name,
-                    Field_Type = item.Field_Type,
-                    TableId = item.TableId,
-                    Value = null
-
-                });
-
+                model.Add(new TypesDTO(item.TableId, item.Field_Name, item.Field_Type, null));
             }
 
             return View(model);
         }
         [HttpPost]
-        public IActionResult SeedData(List<ValueView> values, List<TypeView> model)
+        public IActionResult SeedData(List<ValueDTO> values, List<TypesDTO> model)
         {
             ////fill ViewModel with information
             for (int i = 0; i < values.Count; i++)
             {
-                model.Add(new TypeView
-                {
-                    Field_Type = values[i].Type,
-                    Field_Name = values[i].Column,
-                    TableId = values[i].TableId
-                    ,
-                    Value = values[i].FieldValue
-                });
+                model.Add(new TypesDTO(values[i].TableId, values[i].Column, values[i].Type, values[i].FieldValue));
             }
             if (ModelState.IsValid)
             {
-                string error = _service.AddToValueTable(ValueList(values));
+                
+                string error = _service.AddToValueTable(values);
                 if (error != "ok")
                 {
                     ViewData["ErrorMessage"] = error;
@@ -79,19 +75,6 @@ namespace CreateVisualtable.Controllers
             ViewData["ErrorMessage"] = "فیلد هارا پر کنید";
             return View(model);
         }
-        /// <summary>
-        /// return a list : TableId -  FieldValue -  Column  - Type
-        /// </summary>
-        /// <param name="values"></param>
-        /// <returns></returns>
-        List<(int id, string fieldvalue, string column,string type)> ValueList(List<ValueView> values)
-        {
-            List<(int id, string fieldvalue, string column, string type)> list = new List<(int id, string fieldvalue, string column, string type)>();
-            foreach (var item in values)
-            {
-                list.Add((item.TableId, item.FieldValue, item.Column ,item.Type.ToString()));
-            }
-            return list;
-        }       
+        
 }    
 }

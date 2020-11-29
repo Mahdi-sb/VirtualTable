@@ -1,4 +1,4 @@
-﻿@model List<(int tableId, string fieldValue, string column)>
+﻿@model List<DTO.ValueDTO>
 @{ ViewData["Title"] = "ShowData";
                 var column = ViewData["column"] as List<string>;
                 int xt = column.Count;
@@ -49,7 +49,7 @@
 <tr>
     @for (int j = ct; j < xt; j++)
     {
-<td>@Model[j].Item2</td>}
+<td>@Model[j].FieldValue</td>}
 </tr>ct += column.Count;
                     xt += column.Count;
                 }

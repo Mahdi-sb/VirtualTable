@@ -1,4 +1,5 @@
 ﻿using DataAccess.Entity;
+using DTO;
 using Repository.Context;
 using System;
 using System.Collections.Generic;
@@ -17,12 +18,12 @@ namespace Service.Addvalue
             _check = check;
         }
 
-        public string AddToValueTable(List<(int id, string fieldvalue, string column, string type)> values)
+        public string AddToValueTable(List<ValueDTO> values)
         {
             if (_check.CheckValues(values) != "ok") return _check.CheckValues(values);
             foreach (var item in values)
             {
-                _db.Value.Insert(new Value { TableId = item.Item1, FieldValue = item.Item2, Column = item.Item3 });
+                _db.Value.Insert(new Value { TableId = item.TableId, FieldValue = item.FieldValue, Column = item.Column });
             }
             _db.Save();
             return "ok";

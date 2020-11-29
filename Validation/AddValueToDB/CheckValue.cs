@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,58 +8,54 @@ namespace Validation.AddValueToDB
 {
    public class CheckValue : ICheckValue
     {
-        IValidation _valid;
-        public CheckValue(IValidation valid)
-        {
-            _valid = valid;
-        }
-        public string CheckBool(List<(int id, string fieldvalue, string column, string type)> values)
+        
+        public string CheckBool(List<ValueDTO> values)
         {
             foreach (var item in values)
             {
 
-                if (item.type == "BOOL" && (item.fieldvalue.ToLower() != "true" && item.fieldvalue.ToLower() != "false"))
+                if (item.Type == "BOOL" && (item.FieldValue.ToLower() != "true" && item.FieldValue.ToLower() != "false"))
                 {
-                    return _valid.IsBool();
+                    return Validation.IsBool;
                 }
 
 
             }
-            return _valid.IsOk();
+            return Validation.IsOk;
         }
 
-        public string CheckInt(List<(int id, string fieldvalue, string column, string type)> values)
+        public string CheckInt(List<ValueDTO> values)
         {
             foreach (var item in values)
             {
-                if (item.type == "INT" && item.fieldvalue.Any(char.IsLetter))
+                if (item.Type == "INT" && item.FieldValue.Any(char.IsLetter))
                 {
-                    return _valid.IsInt();
+                    return Validation.IsInt;
 
                 }
 
             }
-            return _valid.IsOk();
+            return Validation.IsOk;
         }
 
-        public string CheckString(List<(int id, string fieldvalue, string column, string type)> values)
+        public string CheckString(List<ValueDTO> values)
         {
             foreach (var item in values)
             {
-                if (item.type == "STRING" && item.fieldvalue.All(char.IsDigit))
+                if (item.Type == "STRING" && item.FieldValue.All(char.IsDigit))
                 {
-                    return _valid.IsString();
+                    return Validation.IsString;
                 }
             }
-            return _valid.IsOk();
+            return Validation.IsOk;
         }
 
-        public string CheckValues(List<(int id, string fieldvalue, string column, string type)> values)
+        public string CheckValues(List<ValueDTO> values)
         {
             if (CheckString(values) != "ok") return CheckString(values);
             if (CheckInt(values) != "ok") return CheckInt(values);
             if (CheckBool(values) != "ok") return CheckBool(values);
-            return _valid.IsOk();
+            return Validation.IsOk;
         }
     }
 }

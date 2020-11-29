@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DTO;
 using Microsoft.AspNetCore.Mvc;
 using Service.ShowInformation;
 
@@ -24,10 +25,10 @@ namespace CreateVisualtable.Controllers
             ViewData["column"] = _service.AllType(id);
             var value = _service.ValueOfTable(id);
 
-            List<(int tableId, string fieldValue, string column)> values = new List<(int tableId, string fieldValue, string column)>();
+            List<ValueDTO> values = new List<ValueDTO>();
             foreach (var item in value)
             {
-                values.Add((item.TableId, item.FieldValue, item.Column));
+                values.Add(new ValueDTO(item.Id,item.FieldValue,item.Column));
             }
 
             return View(values);//_show.ValueOfTable(id));

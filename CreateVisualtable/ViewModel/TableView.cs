@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Validation.Enum;
 
 namespace CreateVisualtable.ViewModel
 {
@@ -21,17 +22,11 @@ namespace CreateVisualtable.ViewModel
     }
     public class TypeList
     {
-        public enum Types
-        {
-            STRING,
-            INT,
-            BOOL
-
-        }
+        
 
         [Required]
 
-        public Types Type { get; set; }
+        public ColumnTypes Type { get; set; }
 
         [Required(ErrorMessage = "نام ستون وارد شود")]
        // [RegularExpression(@"[a-zA-Z]" , ErrorMessage ="نام ستون نمیتواند شامل اعداد باشد")]
@@ -42,7 +37,7 @@ namespace CreateVisualtable.ViewModel
         {
             get
             {
-                foreach (Types type in Enum.GetValues(typeof(Types)))
+                foreach (ColumnTypes type in Enum.GetValues(typeof(ColumnTypes)))
                 {
                     SelectListItem selectListItem = new SelectListItem();
                     selectListItem.Text = type.ToString();
