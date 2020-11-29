@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO.Enum;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,12 +11,12 @@ namespace DTO
         {
 
         }
-        public TypesDTO(string name, string type)
+        public TypesDTO(string name, ColumnTypes type)
         {
             Field_Name = name;
             Field_Type = type;
         }
-        public TypesDTO(int id,string name,string type , string value )
+        public TypesDTO(int id,string name, ColumnTypes type , string value )
         {
             TableId = id;
             Field_Name = name;
@@ -25,6 +26,6 @@ namespace DTO
         public string Value { get; set; }
         public int TableId { get; set; }
         public string Field_Name { get; set; }
-        public string Field_Type { get; set; }
+        public ColumnTypes Field_Type { get; set; }
     }
 }

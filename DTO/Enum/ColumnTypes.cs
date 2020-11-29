@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Validation.Enum
+namespace DTO.Enum
 {
    public enum ColumnTypes
     {

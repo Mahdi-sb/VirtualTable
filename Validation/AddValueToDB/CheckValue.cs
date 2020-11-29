@@ -1,4 +1,5 @@
 ﻿using DTO;
+using DTO.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Validation.AddValueToDB
             foreach (var item in values)
             {
 
-                if (item.Type == "BOOL" && (item.FieldValue.ToLower() != "true" && item.FieldValue.ToLower() != "false"))
+                if (item.Type == ColumnTypes.BOOL && (item.FieldValue.ToLower() != "true" && item.FieldValue.ToLower() != "false"))
                 {
                     return Validation.IsBool;
                 }
@@ -28,7 +29,7 @@ namespace Validation.AddValueToDB
         {
             foreach (var item in values)
             {
-                if (item.Type == "INT" && item.FieldValue.Any(char.IsLetter))
+                if (item.Type == ColumnTypes.INT && item.FieldValue.Any(char.IsLetter))
                 {
                     return Validation.IsInt;
 
@@ -42,7 +43,7 @@ namespace Validation.AddValueToDB
         {
             foreach (var item in values)
             {
-                if (item.Type == "STRING" && item.FieldValue.All(char.IsDigit))
+                if (item.Type == ColumnTypes.STRING && item.FieldValue.All(char.IsDigit))
                 {
                     return Validation.IsString;
                 }

@@ -35,7 +35,7 @@ namespace CreateVisualtable.Controllers
                 List<TypesDTO> types = new List<TypesDTO>();
                 foreach (var item in model.TypeList)
                 {
-                    types.Add(new TypesDTO(item.ColumnName, item.Type.ToString()));
+                    types.Add(new TypesDTO(item.ColumnName, item.Type));
                 }
 
                 string error=_service.AddInformationTodatabase(model.TableName, types);
