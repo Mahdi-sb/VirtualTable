@@ -1,9 +1,7 @@
-﻿using DataAccess.Entity;
-using DTO;
+﻿using Infrastructure.DTO;
+using Models.Entity;
 using Repository.Context;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using Validation.AddValueToDB;
 
 namespace Service.Addvalue

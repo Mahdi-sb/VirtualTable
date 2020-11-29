@@ -1,7 +1,5 @@
-﻿using DataAccess.Entity;
-using System;
+﻿using Models.Entity;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Service.ShowInformation
 {

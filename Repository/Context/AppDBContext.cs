@@ -1,7 +1,5 @@
-﻿
-
-using DataAccess.Entity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Models.Entity;
 
 namespace Repository.Context
 {
@@ -13,7 +11,6 @@ namespace Repository.Context
         {
 
         }
-
 
         public DbSet<Tables> Tables { get; set; }
         public DbSet<Types> Types { get; set; }

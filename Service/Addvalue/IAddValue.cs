@@ -1,12 +1,10 @@
-﻿using DataAccess.Entity;
-using DTO;
-using System;
+﻿using Infrastructure.DTO;
+using Models.Entity;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Service.Addvalue
 {
-   public interface IAddValue
+    public interface IAddValue
     {
         /// <summary>
         /// Add values to Value Table 

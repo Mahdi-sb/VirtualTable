@@ -1,0 +1,12 @@
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Models\bin\Debug\netcoreapp3.1\Models.deps.json
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Models\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Models\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Models\bin\Debug\netcoreapp3.1\Infrastructure.dll
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Models\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Models\obj\Debug\netcoreapp3.1\Models.csprojAssemblyReference.cache
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Models\obj\Debug\netcoreapp3.1\Models.AssemblyInfoInputs.cache
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Models\obj\Debug\netcoreapp3.1\Models.AssemblyInfo.cs
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Models\obj\Debug\netcoreapp3.1\Models.csproj.CoreCompileInputs.cache
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Models\obj\Debug\netcoreapp3.1\Models.csproj.CopyComplete
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Models\obj\Debug\netcoreapp3.1\Models.dll
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Models\obj\Debug\netcoreapp3.1\Models.pdb

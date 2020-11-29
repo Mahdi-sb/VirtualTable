@@ -1,17 +1,16 @@
-﻿using DTO;
-using System;
+﻿using Infrastructure.DTO;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Validation.AddValueToDB
 {
-   public interface ICheckValue
+    public interface ICheckValue
     {
         /// <summary>
         /// check field value to not have digit on it
         /// </summary>
         /// <param name="values"></param>
         /// <returns></returns>
+
         string CheckString(List<ValueDTO> values);
         /// <summary>
         /// check field value to Bool type

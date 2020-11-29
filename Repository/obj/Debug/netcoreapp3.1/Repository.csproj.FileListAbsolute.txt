@@ -1,0 +1,17 @@
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\bin\Debug\netcoreapp3.1\Infrastructure.dll
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfoInputs.cache
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfo.cs
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\bin\Debug\netcoreapp3.1\Repository.deps.json
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\bin\Debug\netcoreapp3.1\Repository.runtimeconfig.json
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\bin\Debug\netcoreapp3.1\Repository.runtimeconfig.dev.json
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\bin\Debug\netcoreapp3.1\Repository.dll
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\bin\Debug\netcoreapp3.1\Repository.pdb
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\obj\Debug\netcoreapp3.1\Repository.csprojAssemblyReference.cache
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CopyComplete
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\obj\Debug\netcoreapp3.1\Repository.dll
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\obj\Debug\netcoreapp3.1\Repository.pdb
+C:\Users\mhadi\Desktop\CreateTable2\VirtualTable\Repository\obj\Debug\netcoreapp3.1\Repository.genruntimeconfig.cache

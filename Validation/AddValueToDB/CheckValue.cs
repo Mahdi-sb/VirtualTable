@@ -1,13 +1,12 @@
-﻿using DTO;
-using DTO.Enum;
-using System;
+﻿using Infrastructure;
+using Infrastructure.DTO;
+using Infrastructure.Enum;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Validation.AddValueToDB
 {
-   public class CheckValue : ICheckValue
+    public class CheckValue : ICheckValue
     {
         
         public string CheckBool(List<ValueDTO> values)
@@ -17,12 +16,12 @@ namespace Validation.AddValueToDB
 
                 if (item.Type == ColumnTypes.BOOL && (item.FieldValue.ToLower() != "true" && item.FieldValue.ToLower() != "false"))
                 {
-                    return Validation.IsBool;
+                    return Massage.IsBool;
                 }
 
 
             }
-            return Validation.IsOk;
+            return Massage.IsOk;
         }
 
         public string CheckInt(List<ValueDTO> values)
@@ -31,12 +30,12 @@ namespace Validation.AddValueToDB
             {
                 if (item.Type == ColumnTypes.INT && item.FieldValue.Any(char.IsLetter))
                 {
-                    return Validation.IsInt;
+                    return Massage.IsInt;
 
                 }
 
             }
-            return Validation.IsOk;
+            return Massage.IsOk;
         }
 
         public string CheckString(List<ValueDTO> values)
@@ -45,10 +44,10 @@ namespace Validation.AddValueToDB
             {
                 if (item.Type == ColumnTypes.STRING && item.FieldValue.All(char.IsDigit))
                 {
-                    return Validation.IsString;
+                    return Massage.IsString;
                 }
             }
-            return Validation.IsOk;
+            return Massage.IsOk;
         }
 
         public string CheckValues(List<ValueDTO> values)
@@ -56,7 +55,7 @@ namespace Validation.AddValueToDB
             if (CheckString(values) != "ok") return CheckString(values);
             if (CheckInt(values) != "ok") return CheckInt(values);
             if (CheckBool(values) != "ok") return CheckBool(values);
-            return Validation.IsOk;
+            return Massage.IsOk;
         }
     }
 }

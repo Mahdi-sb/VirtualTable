@@ -1,7 +1,4 @@
-﻿using DataAccess.Entity;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Models.Entity;
 
 namespace Repository.Context
 {
