@@ -5788,11 +5788,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mhadi\\Desktop\\CreateTable2\\VirtualTable\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\mhadi\\Desktop\\CreateTable2\\VirtualTable\\Repository\\Repository.csproj",
+      "projectPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Repository\\Repository.csproj",
       "packagesPath": "C:\\Users\\mhadi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mhadi\\Desktop\\CreateTable2\\VirtualTable\\Repository\\obj\\",
+      "outputPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5811,8 +5811,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\mhadi\\Desktop\\CreateTable2\\VirtualTable\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\mhadi\\Desktop\\CreateTable2\\VirtualTable\\Models\\Models.csproj"
+            "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Models\\Models.csproj"
             }
           }
         }

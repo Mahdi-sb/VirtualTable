@@ -1,6 +1,6 @@
 ﻿using Infrastructure.DTO;
-using Models.Entity;
 using System.Collections.Generic;
+using Models;
 
 namespace Service.Addvalue
 {
@@ -9,9 +9,8 @@ namespace Service.Addvalue
         /// <summary>
         /// Add values to Value Table 
         /// </summary>
-        /// <param name="Context"></param>
         /// <param name="values"></param>
-        string AddToValueTable(List<ValueDTO> values);
+        string AddToValueTable(List<ValueDto> values);
 
         /// <summary>
         /// return information of table

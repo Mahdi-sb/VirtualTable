@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Models.Entity;
+using Models;
 
 namespace Repository.Context
 {
-    public class AppDBContext: DbContext
+    public class AppDbContext: DbContext
     {
-        public AppDBContext(DbContextOptions<AppDBContext> dbContextOptions) 
+        public AppDbContext(DbContextOptions<AppDbContext> dbContextOptions) 
 
             : base(dbContextOptions)
         {

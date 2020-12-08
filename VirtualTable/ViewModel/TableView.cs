@@ -24,7 +24,7 @@ namespace VirtualTable.ViewModel
     {
         
 
-        [Required]
+        //[Required]
 
         public ColumnTypes Type { get; set; }
 

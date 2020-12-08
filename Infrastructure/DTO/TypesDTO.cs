@@ -2,27 +2,27 @@
 
 namespace Infrastructure.DTO
 {
-    public class TypesDTO
+    public class TypesDto
     {
-        public TypesDTO()
+        public TypesDto()
         {
 
         }
-        public TypesDTO(string name, ColumnTypes type)
+        public TypesDto(string name, ColumnTypes type)
         {
-            Field_Name = name;
-            Field_Type = type;
+            FieldName = name;
+            FieldType = type;
         }
-        public TypesDTO(int id,string name, ColumnTypes type , string value )
+        public TypesDto(int id,string name, ColumnTypes type , string value )
         {
             TableId = id;
-            Field_Name = name;
-            Field_Type = type;
+            FieldName = name;
+            FieldType = type;
             Value = value;
         }
         public string Value { get; set; }
         public int TableId { get; set; }
-        public string Field_Name { get; set; }
-        public ColumnTypes Field_Type { get; set; }
+        public string FieldName { get; set; }
+        public ColumnTypes FieldType { get; set; }
     }
 }

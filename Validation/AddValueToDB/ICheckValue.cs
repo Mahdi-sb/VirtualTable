@@ -11,24 +11,24 @@ namespace Validation.AddValueToDB
         /// <param name="values"></param>
         /// <returns></returns>
 
-        string CheckString(List<ValueDTO> values);
+        string CheckString(List<ValueDto> values);
         /// <summary>
         /// check field value to Bool type
         /// </summary>
         /// <param name="values"></param>
         /// <returns></returns>
-        string CheckBool(List<ValueDTO> values);
+        string CheckBool(List<ValueDto> values);
         /// <summary>
         /// check field value to int type
         /// </summary>
         /// <param name="values"></param>
         /// <returns></returns>
-        string CheckInt(List<ValueDTO> values);
+        string CheckInt(List<ValueDto> values);
         /// <summary>
         /// <returns></returns>
         /// check values is Correct
         /// </summary>
         /// <param name="values"></param>
-        string CheckValues(List<ValueDTO> values);
+        string CheckValues(List<ValueDto> values);
     }
 }

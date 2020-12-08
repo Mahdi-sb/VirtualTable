@@ -1,4 +1,4 @@
-﻿@model List<Infrastructure.DTO.TypesDTO>
+﻿@model List<Infrastructure.DTO.TypesDto>
 @{ ViewData["Title"] = "SeedData"; }
 
 <h1>SeedData</h1>
@@ -19,13 +19,13 @@
         {
 
 <div class="form-group ">
-    <label asp-for="values[@i].FieldValue" class="control-label font-weight-bold " style="color: limegreen">@Model[i].Field_Name  (@Model[i].Field_Type)</label>
+    <label  class="control-label font-weight-bold " style="color: limegreen">@Model[i].FieldName  (@Model[i].FieldType)</label>
     <div>
-        <input type="hidden" value="@Model[i].Field_Name" name="values[@i].Column" class="form-control border-dark col-md-3" style="margin-right:12px" />
+        <input type="hidden" value="@Model[i].FieldName" name="values[@i].Column" class="form-control border-dark col-md-3" style="margin-right:12px" />
         <input type="hidden" value="@Model[i].TableId" name="values[@i].TableId" class="form-control border-dark col-md-3" style="margin-right:12px" />
-        <input type="hidden" value="@Model[i].Field_Type" name="values[@i].Type" class="form-control border-dark col-md-3" style="margin-right:12px" />
+        <input type="hidden" value="@Model[i].FieldType" name="values[@i].Type" class="form-control border-dark col-md-3" style="margin-right:12px" />
         <input type="text" value="@Model[i].Value" name="values[@i].FieldValue" class="form-control border-dark col-md-3" style="margin-right:12px" />
-        <span asp-validation-for="values[@i].FieldValue"></span>
+        
     </div>
 </div>}
 

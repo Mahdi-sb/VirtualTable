@@ -7,45 +7,43 @@ namespace Validation.AddNewTable
 {
     public class ValidationTable : ICheckTableInput
     {
-        IUnitOfWork _db;
+        private readonly IUnitOfWork _db;
         public ValidationTable( IUnitOfWork db)
         {
             _db = db;
         }
 
-        public string CheckAllinput(List<TypesDTO> Types, string TableName)
+        public string CheckAllInput(List<TypesDto> types, string tableName)
         {
-            if (CheckTableName(TableName) != "ok") return CheckTableName(TableName);
-            if (ColumnName(Types) != "ok") return ColumnName(Types);
-            if (NumberOfColumn(Types) != "ok") return NumberOfColumn(Types);
-            return Massage.IsOk;
-
+            if (CheckTableName(tableName) != Massage.IsOk) return CheckTableName(tableName);
+            if (ColumnName(types) != Massage.IsOk) return ColumnName(types);
+            return NumberOfColumn(types) != Massage.IsOk ? NumberOfColumn(types) : Massage.IsOk;
         }
 
-        public string CheckTableName(string TableName)
+        public string CheckTableName(string tableName)
         {
-            return _db.Tables.FindValue(x => x.TableName == TableName) ?
+            return _db.Tables.FindValue(x => x.TableName == tableName) ?
             Massage.RepetitiveTableName : Massage.IsOk;
         }
 
-        public string ColumnName(List<TypesDTO> Types)
+        public string ColumnName(List<TypesDto> types)
         {
             var name = " ";
-            foreach (var item in Types)
+            foreach (var item in types)
             {
                 
-                if(item.Field_Name == name)
+                if(item.FieldName == name)
                 {
                     return Massage.RepetitiveColumnName;
                 }
-                name = item.Field_Name;
+                name = item.FieldName;
             }
             return Massage.IsOk;
         }
 
-        public string NumberOfColumn(List<TypesDTO> Types)
+        public string NumberOfColumn(List<TypesDto> types)
         {
-            return Types.Count == 0 ? Massage.AddColumn : Massage.IsOk;
+            return types.Count == 0 ? Massage.AddColumn : Massage.IsOk;
         }
     }
 }

@@ -3,26 +3,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+// ReSharper disable All
 
 namespace Repository.Context
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private readonly AppDBContext _Context;
+        private readonly AppDbContext _context;
         private readonly DbSet<TEntity> _dbset;
 
-        public Repository(AppDBContext context)
+        public Repository(AppDbContext context)
         {
-            _Context = context;
-            _dbset =_Context.Set<TEntity>();
+            _context = context;
+            _dbset =_context.Set<TEntity>();
         }
 
         public bool FindValue(Expression<Func<TEntity, bool>> where)
         {
-            return _dbset.Where(where).ToList().Count > 0 ? true : false;
-            
-
-            
+            return _dbset.Where(where).ToList().Count > 0 ;
+           
         }
 
         public int GetIdOfTable(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity,int>> select)

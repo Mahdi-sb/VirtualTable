@@ -6,12 +6,10 @@ namespace VirtualTable.Controllers
 {
     public class ShowInfoController : Controller
     {
-        IShowInfo _service;
-        IMap _map;
-        public ShowInfoController(IShowInfo service ,IMap map)
+        private readonly IShowInfo _service;
+        public ShowInfoController(IShowInfo service )
         {
             _service = service;
-            _map = map;
         }
         /// <summary>
         /// show data of table 
@@ -21,7 +19,7 @@ namespace VirtualTable.Controllers
         public IActionResult ShowData(int id)
         {
             ViewData["column"] = _service.AllType(id);
-            var values =_map.ValueList(_service.ValueOfTable(id));
+            var values =Map.ValueList(_service.ValueOfTable(id));
             return View(values);
         }
 

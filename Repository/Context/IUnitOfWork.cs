@@ -1,4 +1,4 @@
-﻿using Models.Entity;
+﻿using Models;
 
 namespace Repository.Context
 {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 using Service.AddNewTable;
 using VirtualTable.Mapper;
 using VirtualTable.ViewModel;
@@ -7,11 +8,9 @@ namespace VirtualTable.Controllers
 {
     public class NewTableController : Controller
     {
-        IAddTable _service;
-        IMap _map;
-        public NewTableController(IAddTable service , IMap map)
+        private readonly IAddTable _service;
+        public NewTableController(IAddTable service)
         {
-            _map = map;
             _service = service;
         }
 
@@ -20,26 +19,19 @@ namespace VirtualTable.Controllers
         [HttpGet]
         public IActionResult AddNewTable()
         {
-            TableView Table = new TableView();
-            return View(Table);
+            var table = new TableView();
+            return View(table);
             
         }
 
         [HttpPost]
         public ActionResult AddNewTable(TableView model)
         {
-            if (ModelState.IsValid)
-            {
-                var types = _map.TypeList(model);
-                string error=_service.AddInformationTodatabase(model.TableName, types);
-
-                if (error != "ok")
-                {
-                    ViewData["ErrorMessage"] = error;
-                    return View("AddNewTable", model);
-                }
-                return RedirectToAction("Index", "Home");
-            }
+            if (!ModelState.IsValid) return View("AddNewTable", model);
+            var types = Map.TypeList(model);
+            var error=_service.AddInformationToDatabase(model.TableName, types);
+            if (error == Massage.IsOk) return RedirectToAction("Index", "Home");
+            ViewData["ErrorMessage"] = error;
             return View("AddNewTable", model);
         }
 

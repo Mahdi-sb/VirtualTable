@@ -1,16 +1,18 @@
-﻿using Models.Entity;
+﻿using Models;
+
+// ReSharper disable All
 
 namespace Repository.Context
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly AppDBContext _context;
-        public UnitOfWork(AppDBContext context)
+        private readonly AppDbContext _context;
+        public UnitOfWork(AppDbContext context)
         {
             _context = context;
         }
 
-        Repository<Types> _types;
+        private Repository<Types> _types;
 
         public IRepository<Types> Types
         {
@@ -21,13 +23,13 @@ namespace Repository.Context
             }
         }
 
-        Repository<Value> _Value;
+        Repository<Value> _value;
         public IRepository<Value> Value
         {
             get
             {
-                return _Value ??
-                    (_Value = new Repository<Value>(_context));
+                return _value ??
+                    (_value = new Repository<Value>(_context));
             }
         }
 
@@ -41,13 +43,13 @@ namespace Repository.Context
             }
         }
 
-        Repository<Tables> _Table;
+        private Repository<Tables> _table;
         public IRepository<Tables> Tables
         {
             get
             {
-                return _Table ??
-                    (_Table = new Repository<Tables>(_context));
+                return _table ??
+                    (_table = new Repository<Tables>(_context));
             }
         }
 

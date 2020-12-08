@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2NxmJkeJk5S6npYxGkGM2XMDylBrJq4XvtrFilvfFhU6XhkCjBFV6cuFRCGJbI+tZ5oiYiVhR418DfTWQkHdDg==",
+  "dgSpecHash": "ezS3qjp/tL/faZ6vrVtIl43RPKkEVYQTcQHKuCzBOSJlfzethc3bhNS6YHWeI1/MSK5FKUl9sbf62Sn6M4jtuA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mhadi\\Desktop\\CreateTable2\\VirtualTable\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mhadi\\Desktop\\CreateTable2\\VirtualTable\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\mhadi\\Desktop\\CreateTable2\\VirtualTable\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\mhadi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mhadi\\Desktop\\CreateTable2\\VirtualTable\\Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

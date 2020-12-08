@@ -9,53 +9,26 @@ namespace Validation.AddValueToDB
     public class CheckValue : ICheckValue
     {
         
-        public string CheckBool(List<ValueDTO> values)
+        public string CheckBool(List<ValueDto> values)
         {
-            foreach (var item in values)
-            {
-
-                if (item.Type == ColumnTypes.BOOL && (item.FieldValue.ToLower() != "true" && item.FieldValue.ToLower() != "false"))
-                {
-                    return Massage.IsBool;
-                }
-
-
-            }
-            return Massage.IsOk;
+            return values.Any(item => item.Type == ColumnTypes.BOOL && (item.FieldValue.ToLower() != "true" && item.FieldValue.ToLower() != "false")) ? Massage.IsBool : Massage.IsOk;
         }
 
-        public string CheckInt(List<ValueDTO> values)
+        public string CheckInt(List<ValueDto> values)
         {
-            foreach (var item in values)
-            {
-                if (item.Type == ColumnTypes.INT && item.FieldValue.Any(char.IsLetter))
-                {
-                    return Massage.IsInt;
-
-                }
-
-            }
-            return Massage.IsOk;
+            return values.Any(item => item.Type == ColumnTypes.INT && item.FieldValue.Any(char.IsLetter)) ? Massage.IsInt : Massage.IsOk;
         }
 
-        public string CheckString(List<ValueDTO> values)
+        public string CheckString(List<ValueDto> values)
         {
-            foreach (var item in values)
-            {
-                if (item.Type == ColumnTypes.STRING && item.FieldValue.All(char.IsDigit))
-                {
-                    return Massage.IsString;
-                }
-            }
-            return Massage.IsOk;
+            return values.Any(item => item.Type == ColumnTypes.STRING && item.FieldValue.All(char.IsDigit)) ? Massage.IsString : Massage.IsOk;
         }
 
-        public string CheckValues(List<ValueDTO> values)
+        public string CheckValues(List<ValueDto> values)
         {
             if (CheckString(values) != "ok") return CheckString(values);
             if (CheckInt(values) != "ok") return CheckInt(values);
-            if (CheckBool(values) != "ok") return CheckBool(values);
-            return Massage.IsOk;
+            return CheckBool(values) != "ok" ? CheckBool(values) : Massage.IsOk;
         }
     }
 }

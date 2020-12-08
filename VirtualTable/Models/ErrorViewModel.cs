@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace VirtualTable.Models
 {
     public class ErrorViewModel

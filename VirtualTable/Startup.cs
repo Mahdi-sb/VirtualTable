@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,7 +10,6 @@ using Service.Addvalue;
 using Service.ShowInformation;
 using Validation.AddNewTable;
 using Validation.AddValueToDB;
-using VirtualTable.Mapper;
 
 namespace VirtualTable
 {
@@ -32,20 +26,19 @@ namespace VirtualTable
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<AppDBContext>(option =>
+            services.AddDbContext<AppDbContext>(option =>
             option.UseSqlServer(Configuration.GetConnectionString("DBContextConnection")));
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IAddTable, AddTable>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<ICheckTableInput, ValidationTable>();
-            services.AddTransient<IAddValue, AddvalueToDB>();
+            services.AddTransient<IAddValue, AddValueToDb>();
             services.AddTransient<ICheckValue, CheckValue>();
             services.AddTransient<IShowInfo, ShowInfo>();
-            services.AddTransient<IMap, Map>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,AppDBContext context)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,AppDbContext context)
         {
             if (env.IsDevelopment())
             {

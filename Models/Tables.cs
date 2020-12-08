@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Models.Entity
+﻿// ReSharper disable All
+namespace Models
 {
     public class Tables
     {

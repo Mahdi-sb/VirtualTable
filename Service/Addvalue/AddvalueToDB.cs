@@ -1,22 +1,23 @@
 ﻿using Infrastructure.DTO;
-using Models.Entity;
 using Repository.Context;
 using System.Collections.Generic;
+using Models;
 using Validation.AddValueToDB;
+// ReSharper disable All
 
 namespace Service.Addvalue
 {
-    public class AddvalueToDB : IAddValue
+    public class AddValueToDb : IAddValue
     {
-        IUnitOfWork _db;
-        ICheckValue _check;
-        public AddvalueToDB(IUnitOfWork db , ICheckValue check)
+        private readonly IUnitOfWork _db;
+        private readonly ICheckValue _check;
+        public AddValueToDb(IUnitOfWork db , ICheckValue check)
         {
             _db = db;
             _check = check;
         }
 
-        public string AddToValueTable(List<ValueDTO> values)
+        public string AddToValueTable(List<ValueDto> values)
         {
             if (_check.CheckValues(values) != "ok") return _check.CheckValues(values);
             foreach (var item in values)

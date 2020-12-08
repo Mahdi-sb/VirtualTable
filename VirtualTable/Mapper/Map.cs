@@ -1,62 +1,51 @@
 ﻿using Infrastructure.DTO;
-using Models.Entity;
 using System.Collections.Generic;
+using System.Linq;
+using Models;
 using VirtualTable.ViewModel;
+using Infrastructure.Enum;
 
 namespace VirtualTable.Mapper
 {
-    public class Map : IMap
+   public static class Map 
     {
-        public List<TableDTO> TableList(List<Tables> tables)
+        public static List<TableDto> TableList(List<Tables> tables)
         {
-            List<TableDTO> list = new List<TableDTO>();
-            foreach (var item in tables)
-            {
-                list.Add(new TableDTO(item.Id, item.TableName));
-            }
-            return list;
+            return tables.Select(item => new TableDto(item.Id, item.TableName)).ToList();
         }
 
-        public List<TypesDTO> TypeList(List<Types> types)
+        public static List<TypesDto> TypeList(List<Types> types)
         {
-            List<TypesDTO> list = new List<TypesDTO>();
-            foreach (var item in types)
-            {
-                list.Add(new TypesDTO(item.TableId, item.Field_Name, item.Field_Type, null));
-            }
-            return list;
+            return types.Select(item => new TypesDto(item.TableId, item.FieldName, item.FieldType, null)).ToList();
         }
 
-        public List<TypesDTO> TypeList(TableView table)
+        public static List<TypesDto> TypeList(TableView table)
         {
-            List<TypesDTO> list = new List<TypesDTO>();
-            foreach (var item in table.TypeList)
-            {
-                list.Add(new TypesDTO(item.ColumnName, item.Type));
-            }
-            return list;
+            return table.TypeList.Select(item => new TypesDto(item.ColumnName, item.Type)).ToList();
         }
 
-        public List<ValueDTO> ValueList(List<Value> values)
+        public static List<ValueDto> ValueList(List<Value> values)
         {
-            List<ValueDTO> list = new List<ValueDTO>();
-            foreach (var item in values)
-            {
-                list.Add(new ValueDTO(item.Id, item.FieldValue, item.Column));
-
-            }
-            return list;
+            return values.Select(item => new ValueDto(item.Id, item.FieldValue, item.Column)).ToList();
         }
 
-        public List<TypesDTO> TypeList(List<ValueDTO> values)
+        public static List<TypesDto> TypeList(List<ValueDto> values)
         {
-            List<TypesDTO> list = new List<TypesDTO>();
-            foreach (var item in values)
-            {
-                list.Add(new TypesDTO(item.TableId, item.Column, item.Type, item.FieldValue));
+            return values.Select(item => new TypesDto(item.TableId, item.Column, item.Type, item.FieldValue)).ToList();
+        }
+        public static List<TypesDto> TypeList(TableInfo table)
+        {
+            return table.Type.Select(item => new TypesDto(item.ColumnName, FindType(item.Type))).ToList();
+        }
 
-            }
-            return list;
+        private static ColumnTypes FindType(string type)
+        {
+            return type.ToLower() switch
+            {
+                "bool" => ColumnTypes.BOOL,
+                "string" => ColumnTypes.STRING,
+                _ => ColumnTypes.INT
+            };
         }
     }
 }

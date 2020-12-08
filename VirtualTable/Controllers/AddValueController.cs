@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Infrastructure;
 using Infrastructure.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Service.Addvalue;
@@ -9,11 +10,9 @@ namespace VirtualTable.Controllers
     public class AddValueController : Controller
     {
         IAddValue _service;
-        IMap _map;
-        public AddValueController(IAddValue service ,IMap map)
+        public AddValueController(IAddValue service )
         {
             _service = service;
-            _map = map;
         }
 
         /// <summary>
@@ -23,7 +22,7 @@ namespace VirtualTable.Controllers
         [HttpGet]
         public IActionResult ChooseTable()
         {
-            var list = _map.TableList(_service.AllTable());
+            var list = Map.TableList(_service.AllTable());
 
             return View(list) ;
         }
@@ -36,25 +35,23 @@ namespace VirtualTable.Controllers
         [HttpGet]
         public IActionResult SeedData(int id)
         {
-            var model =_map.TypeList( _service.TableData(id));
+            var model =Map.TypeList( _service.TableData(id));
             return View(model);
         }
         [HttpPost]
-        public IActionResult SeedData(List<ValueDTO> values, List<TypesDTO> model)
+        public IActionResult SeedData(List<ValueDto> values, List<TypesDto> model)
         {
-            model = _map.TypeList(values);            
+            
+            model = Map.TypeList(values);            
             if (ModelState.IsValid)
             {
                 
-                string error = _service.AddToValueTable(values);
-                if (error != "ok")
-                {
-                    ViewData["ErrorMessage"] = error;
-                    return View(model);
-                }
-                return RedirectToAction("Index", "Home");
+                var error = _service.AddToValueTable(values);
+                if (error == Massage.IsOk) return RedirectToAction("Index", "Home");
+                ViewData["ErrorMessage"] = error;
+                return View(model);
             }
-            ViewData["ErrorMessage"] = "فیلد هارا پر کنید";
+            ViewData["ErrorMessage"] = Massage.FillFields;
             return View(model);
         }
         

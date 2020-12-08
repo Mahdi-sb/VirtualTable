@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validation", "Validation\Validation.csproj", "{83E7B4C8-8DAF-4593-BF98-BD070A38E97D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{904D42E1-82FC-465B-ABCC-4CCDE252D607}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{904D42E1-82FC-465B-ABCC-4CCDE252D607}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPI", "RestAPI\RestAPI.csproj", "{1413C755-E1FA-4105-9B64-B3A49CEBD87E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{904D42E1-82FC-465B-ABCC-4CCDE252D607}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{904D42E1-82FC-465B-ABCC-4CCDE252D607}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{904D42E1-82FC-465B-ABCC-4CCDE252D607}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1413C755-E1FA-4105-9B64-B3A49CEBD87E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1413C755-E1FA-4105-9B64-B3A49CEBD87E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1413C755-E1FA-4105-9B64-B3A49CEBD87E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1413C755-E1FA-4105-9B64-B3A49CEBD87E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

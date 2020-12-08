@@ -1,5 +1,5 @@
-﻿using Models.Entity;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Models;
 
 namespace Service.ShowInformation
 {

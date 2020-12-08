@@ -1,31 +1,33 @@
 ﻿
+using Infrastructure;
 using Infrastructure.DTO;
-using Models.Entity;
 using Repository.Context;
 using System;
 using System.Collections.Generic;
+using Models;
 using Validation.AddNewTable;
 
 namespace Service.AddNewTable
 {
     public class AddTable : IAddTable
     {
-        IUnitOfWork _db;
-        ICheckTableInput _check;
+        private readonly IUnitOfWork _db;
+        private readonly ICheckTableInput _check;
         public AddTable(IUnitOfWork db , ICheckTableInput check)
         {
             _db = db;
             _check = check;
         }
-        public string AddInformationTodatabase(string TableName,List<TypesDTO> Types)
+        public string AddInformationToDatabase(string tableName,List<TypesDto> types)
         {
-            if (_check.CheckAllinput(Types, TableName) != "ok") return _check.CheckAllinput(Types, TableName);
-            AddToTables(TableName);
-            AddToTime(getid(TableName));
-            AddToType(Types, getid(TableName));
+            if (_check.CheckAllInput(types, tableName) !=Massage.IsOk) return _check.CheckAllInput(types, tableName);
+            AddToTables(tableName);
+            AddToTime(GetId(tableName));
+            AddToType(types, GetId(tableName));
             _db.Save();
-            return "ok";
+            return Massage.IsOk;
         }
+
 
 
         public void AddToTables(string model)
@@ -36,21 +38,21 @@ namespace Service.AddNewTable
 
         }
 
-        public void AddToTime(int Id)
+        public void AddToTime(int id)
         {
-            _db.Times.Insert(new CreateTime { TableId = Id, Time = DateTime.Now });
+            _db.Times.Insert(new CreateTime { TableId = id, Time = DateTime.Now });
         }
 
 
-        public void AddToType(List<TypesDTO> Types, int Id)
+        public void AddToType(List<TypesDto> types, int id)
         {
-            foreach (var item in Types)
+            foreach (var item in types)
             {
-                _db.Types.Insert(new Types { Field_Name = item.Field_Name, Field_Type = item.Field_Type, TableId = Id });
+                _db.Types.Insert(new Types { FieldName = item.FieldName, FieldType = item.FieldType, TableId = id });
             }
         }
 
-        int getid(string name)
+        int GetId(string name)
         {
             return _db.Tables.GetIdOfTable(x => x.TableName == name, x => x.Id);
         }

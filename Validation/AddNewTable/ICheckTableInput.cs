@@ -1,16 +1,14 @@
 ﻿using Infrastructure.DTO;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Validation.AddNewTable
 {
    public interface ICheckTableInput 
     {
-        public string ColumnName(List<TypesDTO> Types);
-        public string NumberOfColumn(List<TypesDTO> Types);
-        public string CheckTableName(string TableName);
-        public string CheckAllinput(List<TypesDTO> Types, string TableName);
+        public string ColumnName(List<TypesDto> types);
+        public string NumberOfColumn(List<TypesDto> types);
+        public string CheckTableName(string tableName);
+        public string CheckAllInput(List<TypesDto> types, string tableName);
 
 
 

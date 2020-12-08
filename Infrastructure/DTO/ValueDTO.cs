@@ -3,13 +3,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Infrastructure.DTO
 {
-    public class ValueDTO
+    public class ValueDto
     {
-        public ValueDTO()
+        public ValueDto()
         {
 
         }
-        public ValueDTO(int id,string name, string column)
+        public ValueDto(int id,string name, string column)
         {
             TableId = id;
             Column = column;
