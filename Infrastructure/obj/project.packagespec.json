@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Infrastructure\\Infrastructure.csproj",
+    "projectUniqueName": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Infrastructure\\Infrastructure.csproj",
     "projectName": "Infrastructure",
-    "projectPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Infrastructure\\Infrastructure.csproj",
-    "outputPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Infrastructure\\obj\\",
+    "projectPath": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Infrastructure\\Infrastructure.csproj",
+    "outputPath": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Infrastructure\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

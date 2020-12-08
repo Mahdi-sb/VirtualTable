@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\VirtualTable\\VirtualTable.csproj",
+    "projectUniqueName": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\VirtualTable\\VirtualTable.csproj",
     "projectName": "VirtualTable",
-    "projectPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\VirtualTable\\VirtualTable.csproj",
-    "outputPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\VirtualTable\\obj\\",
+    "projectPath": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\VirtualTable\\VirtualTable.csproj",
+    "outputPath": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\VirtualTable\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -19,8 +19,8 @@
     "frameworks": {
       "netcoreapp3.1": {
         "projectReferences": {
-          "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Service\\Service.csproj": {
-            "projectPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Service\\Service.csproj"
+          "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Service\\Service.csproj": {
+            "projectPath": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Service\\Service.csproj"
           }
         }
       }

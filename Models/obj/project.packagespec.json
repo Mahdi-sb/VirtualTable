@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Models\\Models.csproj",
+    "projectUniqueName": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Models\\Models.csproj",
     "projectName": "Models",
-    "projectPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Models\\Models.csproj",
-    "outputPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Models\\obj\\",
+    "projectPath": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Models\\Models.csproj",
+    "outputPath": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Models\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -19,8 +19,8 @@
     "frameworks": {
       "netcoreapp3.1": {
         "projectReferences": {
-          "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Infrastructure\\Infrastructure.csproj": {
-            "projectPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Infrastructure\\Infrastructure.csproj"
+          "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Infrastructure\\Infrastructure.csproj": {
+            "projectPath": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Infrastructure\\Infrastructure.csproj"
           }
         }
       }

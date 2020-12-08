@@ -5731,11 +5731,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Service\\Service.csproj",
+      "projectUniqueName": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Service\\Service.csproj",
       "projectName": "Service",
-      "projectPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Service\\Service.csproj",
+      "projectPath": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Service\\Service.csproj",
       "packagesPath": "C:\\Users\\mhadi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Service\\obj\\",
+      "outputPath": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5754,11 +5754,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Repository\\Repository.csproj"
+            "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Repository\\Repository.csproj"
             },
-            "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Validation\\Validation.csproj": {
-              "projectPath": "C:\\Users\\mhadi\\Desktop\\VirtualTable\\Validation\\Validation.csproj"
+            "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Validation\\Validation.csproj": {
+              "projectPath": "C:\\Users\\mhadi\\Desktop\\CreateVisiual\\CreateVisualTable\\Validation\\Validation.csproj"
             }
           }
         }
